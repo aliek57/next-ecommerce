@@ -17,6 +17,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
         <div className="font-sans min-h-screen pt-20">
             <main className="max-w-2xl mx-auto">
                 <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
+                <p className="text-lg mb-2">{product.describe}</p>
                 <p className="text-lg mb-2">Price: R${product.price.toFixed(2)}</p>
                 <AddToCartButton product={product} />
             </main>

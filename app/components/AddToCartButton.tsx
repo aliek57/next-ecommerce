@@ -1,5 +1,6 @@
 "use client";
 
+import { toast } from "react-toastify";
 import { useCart } from "../contexts/cartContext";
 import { useRouter } from "next/navigation";
 
@@ -16,8 +17,8 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
     const router = useRouter();
 
     const handleAddClick = () => {
+        toast.info(`${product.name} was add to your cart!`);
         addToCart(product);
-        alert(`${product.name} was add to your cart!`);
         router.push("/")
     }
 

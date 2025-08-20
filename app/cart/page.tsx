@@ -2,13 +2,14 @@
 
 import { useCart } from "../contexts/cartContext";
 import { useRouter } from "next/navigation";
+import { toast } from 'react-toastify';
 
 export default function CartPage() {
     const { cart, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart();
     const router = useRouter();
 
     const handleCheckout = () => {
-        alert("YAAAY! Congrats on your purchase :)");
+        toast.success("YAAAY! Congrats on your purchase :)");
         clearCart();
         router.push("/");
     };
